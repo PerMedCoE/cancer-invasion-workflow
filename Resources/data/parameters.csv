@@ -1,0 +1,2 @@
+cell_junctions_attach_threshold,0.001,0.1,0.9
+cell_junctions_detach_threshold,0.001,0.1,0.9
