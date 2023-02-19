@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [Cancer Invasion Workflow](#Cancer Invasion Workflow)
+- [Cancer Invasion Workflow](#cancer-invasion-workflow)
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
   - [Contents](#contents)
