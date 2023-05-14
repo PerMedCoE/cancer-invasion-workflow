@@ -17,8 +17,8 @@ export COMPUTING_UNITS=8
 runcompss --log_level=debug --graph --python_interpreter=python3 $(pwd)/src/cancer_invasion.py \
     ${dataset}/parameters.csv \
     $(pwd)/results/ \
-    2 \
-    100
+    5 \
+    4500
 
 
 ######################################################
