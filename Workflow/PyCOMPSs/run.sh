@@ -21,8 +21,8 @@ runcompss \
     $(pwd)/src/cancer_invasion.py \
       ${dataset}/parameters_small.csv \
       $(pwd)/results/ \
-      2 \
-      100 # 5 4500
+      5 \
+      4500
 
 
 ######################################################
