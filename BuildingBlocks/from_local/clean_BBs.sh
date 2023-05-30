@@ -7,7 +7,7 @@ CURRENT_DIR=$(pwd)
 
 cd ../../../BuildingBlocks
 
-cd PhysiBoSS_Invasion
+cd PhysiBoSS_invasion
 ./clean.sh
 cd ..
 

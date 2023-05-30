@@ -5,19 +5,16 @@ import argparse
 ############ INPUT PARAMETERS ############
 ##########################################
 
+
 def create_parser():
     """
     Create argument parser
     """
     parser = argparse.ArgumentParser(description="Process some integers.")
-    parser.add_argument("parameters_set", type=str,
-                        help="List of parameters set")
-    parser.add_argument("outdir", type=str,
-                        help="Output directory")
-    parser.add_argument("reps", type=int,
-                        help="Number of repetitions")
-    parser.add_argument("max_time", type=int,
-                        help="Maximum simulation time")
+    parser.add_argument("parameters_set", type=str, help="List of parameters set")
+    parser.add_argument("outdir", type=str, help="Output directory")
+    parser.add_argument("reps", type=int, help="Number of repetitions")
+    parser.add_argument("max_time", type=int, help="Maximum simulation time")
     return parser
 
 
@@ -42,6 +39,7 @@ def parse_input_parameters(show=True):
 ################################################
 ############ CHECK INPUT PARAMETERS ############
 ################################################
+
 
 def check_input_parameters(args):
     """

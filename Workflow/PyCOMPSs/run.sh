@@ -12,20 +12,24 @@ fi
 dataset=$(pwd)/../../Resources/data
 
 # Set the tool internal parallelism and constraint
-export COMPUTING_UNITS=8
+export COMPUTING_UNITS=1
 
-runcompss --log_level=debug --graph --python_interpreter=python3 $(pwd)/src/cancer_invasion.py \
-    ${dataset}/parameters.csv \
-    $(pwd)/results/ \
-    5 \
-    4500
+runcompss \
+    --log_level=debug \
+    --graph \
+    --python_interpreter=python3 \
+    $(pwd)/src/cancer_invasion.py \
+      ${dataset}/parameters_small.csv \
+      $(pwd)/results/ \
+      2 \
+      100 # 5 4500
 
 
 ######################################################
 # APPLICATION EXECUTION EXAMPLE
 # Call:
-#       ./a_run.sh
+#       ./run.sh
 #
 # Example:
-#       ./a_run.sh
+#       ./run.sh
 ######################################################

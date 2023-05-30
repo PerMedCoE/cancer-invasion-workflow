@@ -1,21 +1,23 @@
 #!/usr/bin/env bash
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+if [[ -z "${PERMEDCOE_IMAGES}" ]]; then
+  default_images=$(realpath ${SCRIPT_DIR}/../../BuildingBlocks/Resources/images/)/
+  export PERMEDCOE_IMAGES=${default_images}
+  echo "WARNING: PERMEDCOE_IMAGES environment variable not set. Using default: ${default_images}"
+else
+  echo "INFO: Using PERMEDCOE_IMAGES from: ${PERMEDCOE_IMAGES}"
+fi
+export COMPUTING_UNITS=1
 
-export PERMEDCOE_IMAGES=${SCRIPT_DIR}/../../BuildingBlocks/Resources/images/
-export COMPUTING_UNITS=10
+mkdir $(pwd)/result/invasion_analysis/
 
-# Self contained assets in package
-INVASION_ANALYSIS_ASSETS=$(python3 -c "import invasion_analysis_BB; import os; print(os.path.dirname(invasion_analysis_BB.__file__))")
+TEMP_DIRECTORY=$(pwd)/invasion_analysis_wd
+mkdir -p ${TEMP_DIRECTORY}
 
-source ${SCRIPT_DIR}/aux.sh
-disable_pycompss
-
-mkdir $(pwd)/result/
-
-invasion_analysis_BB -d \
-    --mount_points ${PHYSIBOSS_ASSETS}/assets/:${PHYSIBOSS_ASSETS}/assets/ \
-    --physiboss_results_path $(pwd)/result/physiboss_results/ \
+invasion_analysis_BB \
+    --debug \
+    --tmpdir ${TEMP_DIRECTORY} \
+    default \
+    --physiboss_result_path $(pwd)/result/physiboss_results/ \
     --output_data $(pwd)/result/invasion_analysis/data.csv
-
-enable_pycompss
