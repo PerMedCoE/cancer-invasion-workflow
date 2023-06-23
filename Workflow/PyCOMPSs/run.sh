@@ -15,14 +15,14 @@ dataset=$(pwd)/../../Resources/data
 export COMPUTING_UNITS=1
 
 runcompss \
-    --log_level=debug \
+    --log_level=off \
     --graph \
     --python_interpreter=python3 \
     $(pwd)/src/cancer_invasion.py \
       ${dataset}/parameters_small.csv \
       $(pwd)/results/ \
       5 \
-      4500
+      20 #4500
 
 
 ######################################################
