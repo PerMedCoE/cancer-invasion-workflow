@@ -13,15 +13,20 @@ dataset=$(pwd)/../../Resources/data/
 # Set the tool internal parallelism and constraint
 export COMPUTING_UNITS=1
 
+mkdir worker_wd
+mkdir master_wd
+mkdir log_dir
+
 enqueue_compss \
     --qos=debug \
     --num_nodes=2 \
     --exec_time=45 \
-    --worker_working_dir=$(pwd) \
+    --worker_working_dir=$(pwd)/worker_wd/ \
+    --master_working_dir=$(pwd)/master_wd/ \
+    --log_dir=$(pwd)/log_dir/ \
     --log_level=off \
     --graph \
     --tracing \
-    --python_interpreter=python3 \
     $(pwd)/src/cancer_invasion.py \
       ${dataset}/parameters_small.csv \
       $(pwd)/results/ \
