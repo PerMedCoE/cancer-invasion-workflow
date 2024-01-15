@@ -17,9 +17,6 @@
     - [MareNostrum 4](#marenostrum-4)
       - [Requirements in MN4](#requirements-in-mn4)
       - [Usage steps in MN4](#usage-steps-in-mn4)
-    - [Mahti or Puhti](#mahti-or-puhti)
-      - [Requirements](#requirements)
-      - [Steps](#steps)
   - [License](#license)
   - [Contact](#contact)
 
@@ -173,30 +170,6 @@ All Building Blocks are already installed in MN4, and the Cancer Invasion Workfl
   > :warning: **TIP**: If you want to run the workflow with a different dataset, please edit the `launch.sh` script and define the appropriate dataset path.
 
   After the execution, a `results` folder will be available with with Cancer Invasion Workflow results.
-
-### Mahti or Puhti
-
-This section explains how to run the Cancer Invasion workflow on CSC supercomputers using SnakeMake.
-
-#### Requirements
-
-- Install snakemake (or check if there is a version installed using `module spider snakemake`)
-- Install workflow, using the same steps as for the local machine. With the exception that containers have to be built elsewhere.
-
-#### Steps
-
-
-1. Go to `Workflow/SnakeMake` folder
-
-   ```bash
-   cd Workflow/SnakeMake
-   ```
-
-2. Edit `launch.sh` with the correct partition, account, and resource specifications.  
-
-3. Execute `./launch.sh`
-
-  > :warning: Snakemake provides a `--cluster` flag, but this functionality should be avoided as it's really not suited for HPC systems.
 
 ## License
 
