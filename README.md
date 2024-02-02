@@ -44,7 +44,7 @@ Building Blocks used in the Cancer Invasion Workflow.
 
 The ``Workflow`` folder contains the workflows implementations.
 
-Currently contains the implementation using PyCOMPSs and Snakemake (in progress).
+Currently contains the implementation using PyCOMPSs.
 
 ### Resources
 
@@ -65,7 +65,7 @@ This section explains the requirements and usage for the Cancer Invasion Workflo
 #### Requirements
 
 - [`permedcoe`](https://github.com/PerMedCoE/permedcoe) package
-- [PyCOMPSs](https://pycompss.readthedocs.io/en/stable/Sections/00_Quickstart.html) / [Snakemake](https://snakemake.readthedocs.io/en/stable/)
+- [PyCOMPSs](https://pycompss.readthedocs.io/en/stable/Sections/00_Quickstart.html)
 - [Singularity](https://sylabs.io/guides/3.0/user-guide/installation.html)
 
 #### Usage steps
@@ -111,17 +111,6 @@ This section explains the requirements and usage for the Cancer Invasion Workflo
 
 5. Execute `./run.sh`
 
-**If using Snakemake in local PC** (make sure that SnakeMake is installed):
-
-4. Go to `Workflow/SnakeMake` folder
-
-   ```bash
-   cd Workflows/SnakeMake
-   ```
-
-5. Execute `./run.sh`
-  > **TIP**: If you want to run the workflow with a different dataset, please update the `run.sh` script setting the `dataset` variable to the new dataset folder and their file names.
-
 
 ### MareNostrum 4
 
@@ -139,7 +128,7 @@ All Building Blocks are already installed in MN4, and the Cancer Invasion Workfl
 
    ```bash
    export COMPSS_PYTHON_VERSION=3
-   module load COMPSs/3.1
+   module load COMPSs/3.3
    module load singularity/3.5.2
    module use /apps/modules/modulefiles/tools/COMPSs/libraries
    module load permedcoe
